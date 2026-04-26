@@ -63,6 +63,13 @@ cd D:\AE-CS-M
 .\scripts\smoke_phase1c_gain.ps1
 ```
 
+To run the full Phase 1 smoke set including Phase 1B methods and Phase 1C `gain`:
+
+```powershell
+cd D:\AE-CS-M
+.\scripts\smoke_phase1_all.ps1
+```
+
 ## Environment
 
 GAIN uses the same PyTorch environment recorded for Phase 1B mentor baselines:
