@@ -1,0 +1,39 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Editor and OS noise
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local backups
+*.bak
+*.tmp
+*.log
+
+# Raw datasets are read-only external inputs, not repository content.
+battery_pack_wltp_dataset/
+*.parquet
+
+# Experiment artifacts must be regenerated, not committed.
+experiments/battery_pack_wltp/results/raw/**
+!experiments/battery_pack_wltp/results/raw/.gitkeep
+experiments/battery_pack_wltp/results/summary/**
+!experiments/battery_pack_wltp/results/summary/.gitkeep
+experiments/battery_pack_wltp/masks/**
+!experiments/battery_pack_wltp/masks/.gitkeep
+experiments/battery_pack_wltp/checkpoints/**
+!experiments/battery_pack_wltp/checkpoints/.gitkeep
