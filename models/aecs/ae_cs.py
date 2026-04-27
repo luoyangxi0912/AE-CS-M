@@ -87,7 +87,7 @@ def compute_temporal_knn_init(X, mask, k=5):
 
 
 class Encoder(Model):
-    def __init__(self, latent_dim=64, hidden_units=128, dropout_rate=0.1, l2_reg=5e-4, name="encoder"):
+    def __init__(self, latent_dim=64, hidden_units=128, dropout_rate=0.0, l2_reg=5e-4, name="encoder"):
         super().__init__(name=name)
         self.noise = layers.GaussianNoise(0.05)
         self.lstm1 = layers.LSTM(hidden_units, return_sequences=True)
@@ -108,7 +108,7 @@ class Encoder(Model):
 
 
 class Decoder(Model):
-    def __init__(self, n_features, hidden_units=128, dropout_rate=0.1, l2_reg=5e-4, name="decoder"):
+    def __init__(self, n_features, hidden_units=128, dropout_rate=0.0, l2_reg=5e-4, name="decoder"):
         super().__init__(name=name)
         self.lstm1 = layers.LSTM(hidden_units, return_sequences=True)
         self.lstm2 = layers.LSTM(hidden_units, return_sequences=True)
@@ -125,7 +125,7 @@ class Decoder(Model):
 
 
 class GatingNetwork(Model):
-    def __init__(self, latent_dim=64, dropout_rate=0.1, l2_reg=5e-4, name="gating_network"):
+    def __init__(self, latent_dim=64, dropout_rate=0.0, l2_reg=5e-4, name="gating_network"):
         super().__init__(name=name)
         self.dense1 = layers.Dense(latent_dim * 2, activation=gaussian_activation, kernel_regularizer=tf.keras.regularizers.l2(l2_reg))
         self.dense2 = layers.Dense(latent_dim, activation=gaussian_activation, kernel_regularizer=tf.keras.regularizers.l2(l2_reg))
@@ -151,7 +151,7 @@ class GatingNetwork(Model):
 
 
 class AECS(Model):
-    def __init__(self, n_features, latent_dim=32, hidden_units=128, k_spatial=5, k_temporal=5, dropout_rate=0.1, l2_reg=5e-4, name="ae_cs"):
+    def __init__(self, n_features, latent_dim=32, hidden_units=128, k_spatial=5, k_temporal=5, dropout_rate=0.0, l2_reg=5e-4, name="ae_cs"):
         super().__init__(name=name)
         self.k_spatial = k_spatial
         self.k_temporal = k_temporal

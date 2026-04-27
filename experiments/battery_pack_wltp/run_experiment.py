@@ -134,7 +134,7 @@ def method_config(method: str, smoke: bool, overrides: dict[str, Any] | None = N
 def _load_json_object(path: str | None) -> dict[str, Any]:
     if not path:
         return {}
-    with open(path, encoding="utf-8") as f:
+    with open(path, encoding="utf-8-sig") as f:
         data = json.load(f)
     if not isinstance(data, dict):
         raise ValueError(f"Expected JSON object in {path}, got {type(data).__name__}.")

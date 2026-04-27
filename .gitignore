@@ -23,6 +23,7 @@ Thumbs.db
 *.bak
 *.tmp
 *.log
+.codex_tmp/
 
 # Raw datasets are read-only external inputs, not repository content.
 battery_pack_wltp_dataset/

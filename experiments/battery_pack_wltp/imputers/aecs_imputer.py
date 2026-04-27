@@ -10,7 +10,7 @@ from models.aecs import AECS, generate_augmented_masks, total_loss
 DEFAULT_AECS_CONFIG = {
     "latent_dim": 32,
     "hidden_units": 128,
-    "dropout_rate": 0.1,
+    "dropout_rate": 0.0,
     "batch_size": 8,
     "epochs": 3,
     "learning_rate": 1e-3,
@@ -35,7 +35,7 @@ class AECSImputer(BaseImputer):
             cfg.update(config)
         self.latent_dim = int(cfg["latent_dim"])
         self.hidden_units = int(cfg["hidden_units"])
-        self.dropout_rate = float(cfg.get("dropout_rate", 0.1))
+        self.dropout_rate = float(cfg.get("dropout_rate", 0.0))
         self.batch_size = int(cfg["batch_size"])
         self.epochs = int(cfg["epochs"])
         self.learning_rate = float(cfg["learning_rate"])
